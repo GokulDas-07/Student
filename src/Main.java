@@ -22,6 +22,25 @@ public class Main {
             list.add(stud);
 
         }
+        System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student");
+        int option= input.nextInt();
+
+        switch (option){
+            case 1:
+                for (int i=0;i<list.size();i++)
+                {
+                    System.out.println("Employee "+ (i+1)+" details are:");
+                    System.out.println("Roll Number: "+list.get(i).rollno);
+                    System.out.println("Name: "+list.get(i).name);
+                    System.out.println("Admission number: "+list.get(i).admissionno);
+                    System.out.println("College: "+list.get(i).college);
+                    System.out.println("\n");
+                }
+                break;
+
+
+
+        }
     }
 }
 
