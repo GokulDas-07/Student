@@ -26,32 +26,40 @@ public class Main {
         System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student");
         int option= input.nextInt();
 
-        switch (option){
+        switch (option) {
             case 1:
-                for (int i=0;i<list.size();i++)
-                {
-                    System.out.println("Employee "+ (i+1)+" details are:");
-                    System.out.println("Roll Number: "+list.get(i).rollno);
-                    System.out.println("Name: "+list.get(i).name);
-                    System.out.println("Admission number: "+list.get(i).admissionno);
-                    System.out.println("College: "+list.get(i).college);
+                for (int i = 0; i < list.size(); i++) {
+                    System.out.println("Employee " + (i + 1) + " details are:");
+                    System.out.println("Roll Number: " + list.get(i).rollno);
+                    System.out.println("Name: " + list.get(i).name);
+                    System.out.println("Admission number: " + list.get(i).admissionno);
+                    System.out.println("College: " + list.get(i).college);
                     System.out.println("\n");
                 }
                 break;
 
             case 2:
-                System.out.println("Enter Admission Number:");
-                int admno=input.nextInt();
-                for ( studentDetails s: list)
-                {
-                    if(admno== s.admissionno)
-                    {
-                        System.out.println("Student with Admission number "+admno+" is "+s.name);
-                    }else
-                    {
+                System.out.print("Enter Admission Number:");
+                int admno = input.nextInt();
+                for (studentDetails s : list) {
+                    if (admno == s.admissionno) {
+                        System.out.println("Student with Admission number " + admno + " is " + s.name);
+                    } else {
                         System.out.println("No student found");
                     }
                 }
+                break;
+
+            case 3:
+                System.out.print("Enter the admission number:");
+                int admno1 = input.nextInt();
+                for (studentDetails s : list) {
+                    if (admno1 == s.admissionno) {
+                        list.remove(s);
+                    }
+                }
+                break;
+
 
 
 
