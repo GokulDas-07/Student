@@ -1,10 +1,11 @@
+import java.net.SocketOption;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int count = 5;
+        int count = 1;
         ArrayList<studentDetails> list = new ArrayList<studentDetails>();
         for (int i = 1; i <= count; i++) {
             System.out.println("Enter details of Student " + i + ":");
@@ -37,6 +38,24 @@ public class Main {
                     System.out.println("\n");
                 }
                 break;
+
+            case 2:
+                System.out.println("Enter Admission Number:");
+                int admno=input.nextInt();
+                for ( studentDetails s: list)
+                {
+                    if(admno== s.admissionno)
+                    {
+                        System.out.println("Student with Admission number "+admno+" is "+s.name);
+                    }else
+                    {
+                        System.out.println("No student found");
+                    }
+                }
+
+
+
+
 
 
 
