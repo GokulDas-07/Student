@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int count = 1;
+        int count = 5;
         ArrayList<studentDetails> list = new ArrayList<studentDetails>();
         for (int i = 1; i <= count; i++) {
             System.out.println("Enter details of Student " + i + ":");
@@ -23,7 +23,7 @@ public class Main {
             list.add(stud);
 
         }
-        System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student");
+        System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student \n 4.Exit");
         int option= input.nextInt();
 
         switch (option) {
@@ -59,6 +59,10 @@ public class Main {
                     }
                 }
                 break;
+
+            case 4:
+                System.out.println("Exiting.....");
+                System.exit(0);
 
 
 
