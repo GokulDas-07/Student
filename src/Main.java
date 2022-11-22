@@ -1,11 +1,14 @@
-import java.net.SocketOption;
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<String> jsonArr= new ArrayList<>();
         Scanner input = new Scanner(System.in);
-        int count = 5;
+        System.out.print("Enter number of Student:");
+        int count = input.nextInt();
         ArrayList<studentDetails> list = new ArrayList<studentDetails>();
         for (int i = 1; i <= count; i++) {
             System.out.println("Enter details of Student " + i + ":");
@@ -21,15 +24,18 @@ public class Main {
 
             studentDetails stud = new studentDetails(rollno, admissionno, name, college);
             list.add(stud);
+            jsonArr.add(new Gson().toJson(stud));
 
         }
-        System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student \n 4.Exit");
+        while(true){
+
+        System.out.println("Enter option: \n 1.View Student details \n 2.Search Student \n 3.Delete Student \n 4.json \n 5.Exit");
         int option= input.nextInt();
 
         switch (option) {
             case 1:
                 for (int i = 0; i < list.size(); i++) {
-                    System.out.println("Employee " + (i + 1) + " details are:");
+                    System.out.println("Student " + (i + 1) + " details are:");
                     System.out.println("Roll Number: " + list.get(i).rollno);
                     System.out.println("Name: " + list.get(i).name);
                     System.out.println("Admission number: " + list.get(i).admissionno);
@@ -61,9 +67,18 @@ public class Main {
                 break;
 
             case 4:
+                System.out.println(jsonArr+ "\n");
+
+                break;
+
+            case 5:
                 System.out.println("Exiting.....");
                 System.exit(0);
 
+            default:
+                System.out.println("Invalid Option");
+
+        }
 
 
 
